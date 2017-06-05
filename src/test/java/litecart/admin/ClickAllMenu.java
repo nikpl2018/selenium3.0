@@ -25,12 +25,6 @@ public class ClickAllMenu extends BaseTest {
         logout.click();
     }
 
-    private void login(String username, String password) {
-        wd.findElement(By.xpath("//input[@name='username']")).sendKeys(username);
-        wd.findElement(By.xpath("//input[@name='password']")).sendKeys(password);
-        wd.findElement(By.xpath("//button[@name='login']")).click();
-    }
-
     private List<String> getMenuItemNames() {
         return wd.findElements(By.cssSelector("ul#box-apps-menu > li")).stream().map(WebElement::getText).collect(Collectors.toList());
     }

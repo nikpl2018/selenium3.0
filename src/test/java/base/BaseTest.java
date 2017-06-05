@@ -2,6 +2,7 @@ package base;
 
 import org.junit.After;
 import org.junit.Before;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -60,4 +61,11 @@ public class BaseTest {
     public void stop() {
         wd.quit();
     }
+
+    protected void login(String username, String password) {
+        wd.findElement(By.xpath("//input[@name='username']")).sendKeys(username);
+        wd.findElement(By.xpath("//input[@name='password']")).sendKeys(password);
+        wd.findElement(By.xpath("//button[@name='login']")).click();
+    }
+
 }
