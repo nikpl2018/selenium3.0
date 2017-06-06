@@ -68,4 +68,10 @@ public class BaseTest {
         wd.findElement(By.xpath("//button[@name='login']")).click();
     }
 
+    protected void changeBrowser(String browser) {
+        stop();
+        wd = wdFactory(browser);
+        wd.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+    }
+
 }
