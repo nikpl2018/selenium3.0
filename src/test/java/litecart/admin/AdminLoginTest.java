@@ -14,7 +14,7 @@ public class AdminLoginTest extends BaseTest {
         username.sendKeys("admin");
         WebElement password = wd.findElement(By.xpath("//input[@name='password']"));
         password.sendKeys("admin");
-        WebElement login = wd.findElement(By.xpath("//button[@name='login']"));
+        WebElement login = wd.findElement(By.xpath("//button[@name='adminLogin']"));
         login.click();
         WebElement logout = wd.findElement(By.xpath("//a[@title='Logout']"));
         logout.click();

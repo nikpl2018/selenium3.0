@@ -3,7 +3,6 @@ package litecart.admin;
 import base.BaseTest;
 import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 
 import java.util.List;
@@ -14,7 +13,7 @@ public class ClickAllMenu extends BaseTest {
     @Test
     public void clickOnMenu() {
         wd.get("http://localhost/litecart/admin/");
-        login("admin", "admin");
+        adminLogin("admin", "admin");
         getMenuItemNames().stream()
                 .peek(this::clickOnMenuItem)
                 .peek(name -> checkH1Present())

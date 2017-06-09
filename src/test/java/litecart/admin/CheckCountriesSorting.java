@@ -16,7 +16,7 @@ public class CheckCountriesSorting extends BaseTest {
     @Test
     public void checkCountriesSorting() {
         wd.get("http://localhost/litecart/admin/");
-        login("admin", "admin");
+        adminLogin("admin", "admin");
         wd.get("http://localhost/litecart/admin/?app=countries&doc=countries");
         int countryNameColumnIndex = getColumnIndexByName("Name");
         List<String> countryNames = getCountryNames(countryNameColumnIndex);
@@ -37,7 +37,7 @@ public class CheckCountriesSorting extends BaseTest {
     @Test
     public void checkGeoZones() {
         wd.get("http://localhost/litecart/admin/");
-        login("admin", "admin");
+        adminLogin("admin", "admin");
         wd.get("http://localhost/litecart/admin/?app=geo_zones&doc=geo_zones");
         int countryNameColumnIndex = getColumnIndexByName("Name");
         List<String> countryWithZonesUrls = getRows().stream()
