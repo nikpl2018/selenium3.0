@@ -65,7 +65,7 @@ public class BaseTest {
     protected void adminLogin(String username, String password) {
         wd.findElement(By.xpath("//input[@name='username']")).sendKeys(username);
         wd.findElement(By.xpath("//input[@name='password']")).sendKeys(password);
-        wd.findElement(By.xpath("//button[@name='adminLogin']")).click();
+        wd.findElement(By.xpath("//button[@name='login']")).click();
     }
 
     protected void changeBrowser(String browser) {
