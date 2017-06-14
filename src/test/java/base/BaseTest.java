@@ -10,6 +10,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.BrowserType;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -20,11 +21,13 @@ public class BaseTest {
     private static final String DRIVERS_PATH = System.getProperty("user.dir") + "/src/test/resources/webdrivers";
 
     protected WebDriver wd;
+    protected WebDriverWait wait;
 
     @Before
     public void setup() {
         wd = wdFactory(BrowserType.CHROME);
         wd.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        wait = new WebDriverWait(wd, 5);
     }
 
     private WebDriver wdFactory(String browser) {
