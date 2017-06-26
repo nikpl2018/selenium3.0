@@ -44,7 +44,6 @@ public class WorkingWithCart extends BaseTest {
         WebElement addToCart = wd.findElement(By.cssSelector("button[name = 'add_cart_product']"));
         addToCart.click();
         wait.until(d -> Integer.parseInt(cartQuantityWe.getText()) >= beforeCartQuantity + quantity);
-
     }
 
     private void selectFirstSizeIfAvailable() {
